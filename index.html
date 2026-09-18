@@ -148,6 +148,11 @@
 
 <h2 id="lire"><span class="n">Orientation</span>How to read this codex</h2>
 
+<div class="tech"><span class="lbl">Working revision — 18 September 2026</span>
+<p>This revision incorporates targeted in-game checks and community feedback. It is
+not a blanket developer certification. Player reports, client data, displayed
+requirements and unresolved questions are distinguished below.</p></div>
+
 <p>Three ways in, depending on what you are looking for.</p>
 <ul>
   <li><strong>You are new to the game</strong> → <a href="#jeu">The game in one page</a>, then
@@ -194,7 +199,8 @@ village. This is the constraint that shapes all military development.</p>
 <p><strong>The alliance is not a cosmetic bonus.</strong> Reinforcements, diplomacy, trade, map objectives and
 the endgame all go through it. A solo account can develop; it cannot win.</p>
 
-<p>The game's shop is cosmetic: it sells neither resources, nor troops, nor competitive advantage.</p>
+<p><span class="unk">Shop not audited</span> The current shop catalogue has not been
+reviewed for this revision; no general claim about its gameplay impact is made here.</p>
 
 <h2 id="monde"><span class="n">Orientation</span>World, speed and rules</h2>
 
@@ -398,12 +404,12 @@ includes speed but not research; the resource bar tooltip gives the real capacit
 <div class="brief"><span class="lbl">In short</span>
 <p>Eighteen fields per village. The maximum level does not depend on the field but on the <strong>village's
 status</strong>: 10 for a normal village, 13 for a non-capital city, and higher still in the capital — the code
-says 22, and level 11 is the highest anyone has been seen to reach.</p></div>
+says 22. An upgrade to level 11 has been seen offered, not completed.</p></div>
 
 <div class="scroll"><table>
   <thead><tr><th>Field</th><th class="n">Normal village</th><th class="n">Non-capital city</th><th class="n">Capital</th></tr></thead>
   <tbody>
-    <tr><td>Woodcutter · Clay Pit · Iron Mine · Grazing Field</td><td class="n">10</td><td class="n">13</td><td class="n">22 per the code<br><span class="unk">11 observed</span></td></tr>
+    <tr><td>Woodcutter · Clay Pit · Iron Mine · Grazing Field</td><td class="n">10</td><td class="n">13</td><td class="n">22 per the code<br><span class="unk">11 offered, not built</span></td></tr>
   </tbody>
 </table></div>
 
@@ -440,7 +446,7 @@ three, and city status three as well — but the two do not stack.</p></div>
     <tr><td><strong>Academy</strong></td><td>Unlocks unit types and gives access to the village's research.</td></tr>
     <tr><td><strong>Residence · Palace</strong></td><td>Protect the village from conquest as long as they stand, and open the expansion slots.</td></tr>
     <tr><td><strong>Marketplace</strong></td><td>One merchant per level. It is the circulatory system of a multi-village empire.</td></tr>
-    <tr><td><strong>Expedition Camp</strong></td><td>Opens three Wilder Site slots, at levels 5, 10 and 15. The <em>Frontier Command</em> Keystone adds one more <span class="unk">whether the total then reaches four is unverified</span>.</td></tr>
+    <tr><td><strong>Expedition Camp</strong></td><td>Opens three Wilder Site slots, at levels 5, 10 and 15. <em>Frontier Command</em> explicitly adds one more. The resulting total of four is corroborated by community testimony; four simultaneous possessions have not been directly observed.</td></tr>
     <tr><td><strong>Herbalist</strong></td><td>Makes up to <strong>40 %</strong> of fallen soldiers healable — excluding siege, Leaders and Settlers. Its level sets how many can be held at once, from 100 to 5 100.</td></tr>
     <tr><td><strong>Treasury</strong></td><td>Required to claim an artefact: level 10 (small and Plan), 15 (large), 20 (unique).</td></tr>
     <tr><td><strong>Watch Tower</strong></td><td>A twofold defensive effect, and the only access to City Guards.</td></tr>
@@ -489,7 +495,7 @@ list: five times the speed on everything past the twentieth tile, which reshapes
 target. And the <strong>Embassy stops at level 3</strong> — every level after that buys you nothing in member
 slots, whatever else it unlocks.</p></div>
 
-<div class="warn"><span class="lbl">Watch out — the Rider's Wells does nothing for nine levels</span>
+<div class="warn"><span class="lbl">Watch out — upkeep relief starts at level 10</span>
 <p>Embermark's unique building is often sold as a cavalry upkeep discount. The upkeep reduction is
 <strong>zero until level 10</strong>, then −1, and only reaches −3 at level 20. Only the training-speed side
 improves smoothly from level 1. Build it for the discount and you pay nine levels before the first point of
@@ -766,7 +772,9 @@ elsewhere.</p></div>
 
 <p>Research Points are produced by the villagers: the bigger the village grows, the more it generates. Some
 tasks grant them too. A technology, or the whole tree, can be <strong>reset with 80 % of the points
-refunded</strong>, provided you cancel or finish whatever depends on it.</p>
+refunded</strong>, subject to the reset prerequisites. The reset panel displays a
+<strong>72-hour cooldown</strong>. Its exact scope and whether individual and full
+resets share that timer remain unverified.</p>
 
 <p>Each guild contains three <strong>Minor</strong> technologies, three <strong>Major</strong> ones and one
 <strong>Keystone</strong>. Minor and Major have three ranks; a Keystone has only one. Ranks
@@ -778,13 +786,13 @@ same things:</p>
 <div class="scroll"><table>
   <thead><tr><th>Tier</th><th>What it requires</th></tr></thead>
   <tbody>
-    <tr><td><strong>Minor</strong></td><td>the RP cost · free Minor capacity · a building or field condition. <strong>No upstream research.</strong></td></tr>
+    <tr><td><strong>Minor</strong></td><td>the RP cost · free Minor capacity · a building or field condition. No upstream research on the inspected example; check the individual card.</td></tr>
     <tr><td><strong>Major</strong></td><td>the RP cost · free Major capacity · a building condition, often with <strong>alternatives</strong> ("A <em>or</em> B <em>or</em> C") · <strong>its paired Minor at rank II</strong></td></tr>
-    <tr><td><strong>Keystone</strong></td><td>the RP cost · free Keystone capacity · a <strong>Town Hall level</strong> · "Unlock any 3 Major ranks in this branch"</td></tr>
+    <tr><td><strong>Keystone</strong></td><td>the RP cost · free Keystone capacity · a <strong>technology-specific building requirement</strong> (Frontier Command explicitly requires Expedition Camp 20) · "Unlock any 3 Major ranks in this branch"</td></tr>
   </tbody>
 </table></div>
-<p><strong>The rule that governs the whole tree:</strong> each guild pairs its three Minors with its three
-Majors, one to one, and <strong>a Major stays locked until its paired Minor reaches rank II</strong>. That is
+<p><strong>The mapping supported by the inspected cards:</strong> the tree presents Minor–Major pairs,
+and the four named Major requirements checked so far require the corresponding <strong>Minor at rank II</strong>. That is
 why a guild can look half-open with plenty of points left: you are two Minor ranks away from the Major you
 actually want, not short of RP.</p>
 <p>Worked example: <em>Industrial Expansion</em> asks for 1 400 RP, Major capacity, "Sawmill level 5
@@ -801,7 +809,7 @@ its three Majors at one rank each satisfies both readings, and that is the state
 
 <div class="brief"><span class="lbl">In short</span>
 <p>A village has <strong>18 Minor points, 9 Major and 3 Keystone</strong>, shared across the three paths.
-The first two budgets can be bought beyond that; the Keystone budget cannot. So it is the Keystone that really
+The first two budgets have capacity-purchase controls; none was found for Keystone on the inspected screens. So it is the Keystone budget that strongly
 decides a village's specialisation.</p></div>
 
 <div class="tech"><span class="lbl">Technical detail — cost scales</span>
@@ -811,26 +819,30 @@ decides a village's specialisation.</p></div>
   <tbody>
     <tr><td>Minor</td><td class="n">200</td><td class="n">500</td><td class="n">1 300</td><td class="n">18</td><td class="n">11 000 · Town Hall 10</td></tr>
     <tr><td>Major</td><td class="n">1 400</td><td class="n">4 400</td><td class="n">11 000</td><td class="n">9</td><td class="n">54 000 · Town Hall 15</td></tr>
-    <tr><td>Keystone</td><td class="n">16 000</td><td class="n">—</td><td class="n">—</td><td class="n">3</td><td>not purchasable</td></tr>
+    <tr><td>Keystone</td><td class="n">16 000</td><td class="n">—</td><td class="n">—</td><td class="n">3</td><td>no purchase control found</td></tr>
   </tbody>
 </table></div>
 <p>A Minor capacity point costs as much as a Major rank III, and fifty-five times the first Minor
 rank: it is a late-game point sink, not a development option. The purchase dialog states the price and its
 own requirement — Town Hall 10 for Minor capacity, Town Hall 15 for Major.</p>
-<p><strong>There is no Keystone equivalent.</strong> The tree offers a "buy more points" control for Minor and
-for Major, and none at all for Keystone: the three Keystone slots are the one budget no amount of RP can widen.
-That is what makes the Keystone choice irreversible in practice — and it is why the 16 000 RP is the cheap part
-of it.</p>
+<p><strong>No Keystone capacity-purchase control was found on the inspected screens.</strong>
+The displayed budget is three slots. Do not confuse this scarcity with irreversible choices:
+reset controls exist, with a point loss, prerequisites and a cooldown.</p>
 <p>Resetting gives back <strong>80 %</strong> of the points spent, one technology at a time or the whole tree
-at once, provided nothing downstream is still running. The tree displays the exact refund before you confirm.</p>
+at once, subject to the conditions displayed by the reset panel. The exact refund
+is shown before confirmation. A player-supplied capture on 18 September shows
+<strong>72 h</strong> for the reset cooldown; the player confirms the wait between
+resets. Whether the timer is per research, village or account, and shared between
+the two reset modes, is not established.</p>
 <p><span class="unk">unconfirmed</span> Whether a <em>second</em> capacity purchase in the same village costs
-the same as the first is not established — only the first purchase has been priced.</p></div>
+the same as the first has not been priced directly. Community feedback reports an
+increase, but gives neither the second price nor a progression formula.</p></div>
 
 <h2 id="rech-cles"><span class="n">Research</span>Structural researches</h2>
 
 <p>Out of 63 technologies, a handful change the way you play rather than adding a percentage. The full tree
  is in the <a href="#tab-recherches">research reference</a>; note how many of these are Keystones, and that a
- village only ever gets three.</p>
+ the inspected village budget is three Keystone slots.</p>
 
 <div class="scroll"><table>
   <thead><tr><th>Research</th><th>Cat.</th><th>Why it matters</th></tr></thead>
@@ -843,7 +855,7 @@ the same as the first is not established — only the first purchase has been pr
     <tr><td><strong>Queue Planning</strong></td><td>Minor</td><td>+1 / +2 / +3 queue slots beyond the Town Hall limit.</td></tr>
     <tr><td><strong>Material Salvage</strong></td><td>Minor</td><td>Demolition 35 / 40 / 45 %; rubble 15 / 20 / 25 %. It is also the Minor that gates <em>Expanded Foundations</em>, so its rank II is unavoidable.</td></tr>
     <tr><td><strong>Fetch Orders</strong></td><td>Major</td><td>Reverses the logistics flow: your merchants go and <em>fetch</em> instead of sending.</td></tr>
-    <tr><td><strong>Frontier Command</strong></td><td><strong>Keystone</strong></td><td>+1 Wilder Site slot for that village. It is the Frontier &amp; Diplomacy Keystone, so it costs one of the three irreplaceable slots.</td></tr>
+    <tr><td><strong>Frontier Command</strong></td><td><strong>Keystone</strong></td><td>+1 Wilder Site slot for that village, explicitly shown on its card. Requires Expedition Camp 20 and uses a Keystone slot. Three Camp slots plus one imply four; a community reply corroborates this total, but four simultaneous possessions have not been directly checked.</td></tr>
     <tr><td><strong>Battlefield Salvage</strong></td><td>Minor</td><td>Returns 5 / 10 / 15 % of the cost of troops killed in an attack or raid, within the carrying capacity of the survivors.</td></tr>
     <tr><td><strong>Wave Drill</strong></td><td>Major</td><td>Sets the Wave Builder to 9, then 10, then 11 waves — one extra wave per rank over a base of 8, for 16 800 RP in total. Needs Rally Point 10 and <em>Campaign Orders II</em>.</td></tr>
     <tr><td><strong>Grand Work</strong></td><td><strong>Keystone</strong></td><td>Progressive funding of an upgrade, automatically queued once funded. Cancellable for 80 % of the materials stored.</td></tr>
@@ -1276,13 +1288,13 @@ counting on it.</p></div>
 
 <div class="brief"><span class="lbl">In short</span>
 <p>Membership, reinforcements, trade and diplomacy are linked: changing a relation can block a flow or send
-troops home. The Embassy carries 6 member slots from level 3, and <em>Banner's Reach</em> adds one per level on
+troops home. The Embassy carries 6 member slots from level 3, and <em>Banner's Reach</em> adds capacity on
 top. Five collective bonuses are funded by member donations.</p></div>
 
 <div class="scroll"><table>
   <thead><tr><th>Alliance bonus</th><th>Effect</th><th>Rate per level</th></tr></thead>
   <tbody>
-    <tr><td><strong>Banner's Reach</strong></td><td>Raises the alliance member cap</td><td class="n">+1 slot</td></tr>
+    <tr><td><strong>Banner's Reach</strong></td><td>Raises the alliance member cap</td><td class="n">+2 total fits the level-2 observation; progression unverified</td></tr>
     <tr><td><strong>Civic Legacy</strong></td><td>Culture Point production</td><td class="n">+2 %</td></tr>
     <tr><td><strong>Arms Mastery</strong></td><td>Troop strength, attack and defence</td><td class="n">+2 %</td></tr>
     <tr><td><strong>Trade Network</strong></td><td>Merchant capacity</td><td class="n">+30 %</td></tr>
@@ -1298,13 +1310,13 @@ each contingent carries the bonus of its own alliance, so reinforcing a weaker a
 their troops.</p>
 
 <div class="warn"><span class="lbl">Watch out — the alliance screen shows totals, not rates</span>
-<p>Each bonus is labelled "per level", but the figure next to it is the <strong>total already reached at the
-current level</strong>. <em>Banner's Reach</em> at level 2 displays "+2 member slots per level" and is in fact
-worth +2 slots in all, so <strong>+1 per level</strong>. The percentage bonuses hide the difference — level 2
-showing +4 % is the same number either way — which makes the member cap the only place the trap is visible.</p>
+<p><em>Banner's Reach</em> at level 2 displays "+2 member slots per level", while
+the observed alliance cap is eight. This wording does not by itself establish the
+increment at every level. Distinguish a current total from a marginal increase.</p>
 <p>The arithmetic closes cleanly: the <strong>Embassy grants 6 members from level 3</strong>, flat and with no
-further gain up to 20. Six plus two is the cap of 8 that was observed. Read a displayed bonus as a total and
-divide by the level to get the rate.</p></div>
+further gain up to 20 in the extracted table. Six plus two fits the observed cap of
+eight. That fit is not proof of a globally linear bonus progression: do not divide
+a total by its level and present the result as a verified rate.</p></div>
 
 <h3>Relations</h3>
 <div class="scroll"><table>
@@ -1365,7 +1377,7 @@ implies for a level-100 Monument has <strong>not</strong> been verified — see 
 <div class="scroll"><table>
   <thead><tr><th>Where</th><th>What is there and what people often miss</th></tr></thead>
   <tbody>
-    <tr><td><strong>Building → Overview → “Show all levels”</strong></td><td>The full twenty-level table: effect, the four costs, food consumption and build time. The densest source in the game — values <em>with the speed factor included, research excluded</em>.</td></tr>
+    <tr><td><strong>Building → Overview → “Show all levels”</strong></td><td>The available level table: effect, the four costs, food consumption and build time. Scroll inside the panel; the number of levels varies by building. Check the displayed modifiers rather than assuming every table has the same scope.</td></tr>
     <tr><td><strong>Town Hall → Resources</strong></td><td>Breakdown of production and of every upkeep item. This is the screen that shows the order in which the formulas are composed.</td></tr>
     <tr><td><strong>Town Hall → Management</strong></td><td>Renaming, upgrading to a city, and demolishing buildings one by one.</td></tr>
     <tr><td><strong>Residence or Palace → Expansion</strong></td><td>Slots unlocked, used, reserved and open; the village founded by each slot; and the whole Culture Points dashboard.</td></tr>
@@ -1383,8 +1395,12 @@ implies for a level-100 Monument has <strong>not</strong> been verified — see 
 </table></div>
 
 <div class="warn"><span class="lbl">Watch out</span>
-<p><strong>Build</strong> mode hides building names while it shows the free plots: you have to
-leave it to read the village again.</p></div>
+<p>Building names in <strong>Build</strong> mode depend on the option under
+<strong>Settings → Game</strong>; hiding them is not unconditional. Some tooltip
+details may be missing from accessibility text, so inspect them visually as well.</p>
+<p><strong>Safety:</strong> a gameplay option allows repeated attacks from reports
+to be sent immediately, without the Rally Point confirmation. Never assume a
+repeat button only prepares the action.</p></div>
 
 <h2 id="tab-unites"><span class="n">Reference</span>Unit table</h2>
 
@@ -1516,15 +1532,16 @@ not in Research Points. The mapping follows the Class column
 Every village has its own copy, and its own points.</p>
 
 <div class="tech"><span class="lbl">Technical detail — how to read this table</span>
-<p>Each row is a <strong>pair</strong>: the Minor on the left gates the Major on its right, which stays locked
-until that Minor reaches <strong>rank II</strong>. Each guild's three pairs feed its single Keystone.
-Reading the table by rows therefore gives the real unlock order; reading it by columns only gives a list.</p>
+<p>Each row is a <strong>proposed pair</strong>: checked cards require the Minor on
+the left at <strong>rank II</strong> for the Major on the right. Unchecked rows remain
+a navigation aid, not individually proven prerequisites.</p>
 <p>The table holds <strong>27 pairs</strong>, and be clear about how much of that is established:
-<strong>three</strong> are confirmed by the prerequisite text the game itself displays — Focus Production II
-for Industrial Expansion, Campaign Orders II for Wave Drill, Merchant Requests II for Fetch Orders. The
-remaining <strong>24 are read from the tree's layout</strong> and from the locked/available states matching
-that reading <span class="unk">24 of 27 pairings inferred</span>.</p>
-<p>Those three confirmed links sit in three different guilds, and each guild has three pairs — so no guild is
+<strong>four</strong> are confirmed by displayed prerequisite text — Focus Production II
+for Industrial Expansion, Campaign Orders II for Wave Drill, Merchant Requests II
+for Fetch Orders, and Organized Labor II for Emergency Work Crews. The remaining
+<strong>23 are inferred from the tree's layout</strong> and reported state comparisons
+<span class="unk">23 of 27 pairings inferred</span>.</p>
+<p>Those four confirmed links sit in four different guilds, and each guild has three pairs — so no guild is
 fully verified. Treat the pairing as a reliable way to read the tree, not as a proven mapping, and check the
 card of any Major you are about to commit to.</p></div>
 
@@ -1605,28 +1622,33 @@ building condition attached to it.</p>
     <tr><td>Exact prerequisite for a Keystone</td><td>The wording is "Unlock any 3 Major ranks in this branch". A guild with its three Majors at one rank each satisfies both readings at once, so the observed state does not discriminate. A guild holding three ranks in fewer than three Majors would settle it.</td></tr>
     <tr><td>Visibility threshold for incoming troops</td><td>It depends on the Rally Point level; the value is not published.</td></tr>
     <tr><td>Curve of the Culture Point thresholds</td><td>Configured by the server; only the Residence or the Palace of the current world shows the next threshold.</td></tr>
-    <tr><td>Per-level scale of the alliance bonuses</td><td>One world's rates have been read off the alliance screen, but the scale is server-configured, so the figures do not transfer. The member cap itself is settled: Embassy 6 from level 3, plus one per Banner's Reach level.</td></tr>
+    <tr><td>Per-level scale of the alliance bonuses</td><td>Observed totals are world-specific. Embassy 6 plus a Banner's Reach contribution of 2 fits the observed level-2 cap of 8; a constant increase of one at every level is not established.</td></tr>
     <tr><td>Configured maximum alliance capacity</td><td>It determines the Monument's cost multiplier, and varies by world.</td></tr>
     <tr><td>Scaling of The Ancients' troops</td><td>Announced as indexed on the maximum alliance size; the formula is not demonstrated.</td></tr>
     <tr><td>Complete table of Wilder Site types</td><td>The +25 / +50 / +100% tiers are reported; the percentage displayed in game is authoritative.</td></tr>
     <tr><td>Training building, beyond the eight units listed</td><td>Eight units were read off the training screens of one faction. Siege placement is inferred from the Workshop's own description, and the thirty units of the other three factions follow the mapping by symmetry, not by observation.</td></tr>
-    <tr><td>Minor→Major pairings, 24 of 27</td><td>Three links are confirmed by the prerequisite text in game. The rest match the tree layout and the locked/available states, which is consistent but not demonstrated.</td></tr>
+    <tr><td>Minor→Major pairings, 23 of 27</td><td>Four named links are confirmed by displayed prerequisites. Player captures also show one rank locked versus two ranks unlocked on an unnamed pair; they do not establish a fifth named link or prove every branch.</td></tr>
     <tr><td>Capital + city combination</td><td>The code reportedly gives priority to the capital branch for the fields; the combination is not documented.</td></tr>
-    <tr><td>Fate of over-cap fields after a capital move</td><td>The capital is the village with the Palace, and the old one reverts to an ordinary village when the Palace moves. Its fields above level 10 are then over the cap; whether they are frozen, capped or reduced is not documented.</td></tr>
+    <tr><td>Fate of over-cap fields after a capital move</td><td>A community reply reports that fields are reduced. The exact resulting level and timing have not been supplied. Do not assume a level-10 result, particularly without distinguishing village and City status.</td></tr>
     <tr><td>True field ceiling in a capital</td><td>Level 11 has been seen offered on a level-10 field, so the cap is above 10. The figure of 22 comes from the client's code and no field has been observed anywhere near it.</td></tr>
     <tr><td>Wave Builder base capacity</td><td>Put at 8 by veteran players independently agreeing, which makes <em>Wave Drill</em> a +1 per rank research. Solid enough to plan on; still testimony rather than a reading, because the game never displays the figure.</td></tr>
-    <tr><td>Price of a second research-capacity purchase</td><td>The first costs 11 000 RP for Minor and 54 000 for Major. Whether the next one costs the same has not been observed.</td></tr>
+    <tr><td>Price of a second research-capacity purchase</td><td>The first costs 11 000 RP for Minor and 54 000 for Major. A community reply reports increasing costs; the second amount and progression remain unverified.</td></tr>
+    <tr><td>Research-reset cooldown scope</td><td>80% refund and a 72-hour cooldown are displayed. The exact scope of the timer and whether individual/full resets share it remain unknown.</td></tr>
     <tr><td>Effect carried by each blessing</td><td>The three tiers of all seven are known. Which effect text belongs to which blessing was matched by meaning, not demonstrated.</td></tr>
     <tr><td>Watchfire mechanics after the September patch</td><td>The scoring tiers, supply cap and end-of-event refund in circulation predate the patch and have not been re-observed during a live event.</td></tr>
-    <tr><td>Celebration amount by Festival Grounds level</td><td>The duration law is known and linear. Whether the level also changes the number of points granted has not been tested — the amounts seen at level 6 are the only data point.</td></tr>
-    <tr><td>Scope of the catapult demolition law</td><td>The coefficient 4 and the level-only cost fit every measurement taken on ordinary buildings. Nothing tested extends them to the Ancient Monument or other endgame structures.</td></tr>
-    <tr><td>Fate of the four buildings absent from the target selector</td><td>They cannot be chosen as a catapult target on the screen observed. Whether another mechanic can destroy them is untested — the ram already removes the Watch Tower without using that selector.</td></tr>
+    <tr><td>Celebration amount by Festival Grounds level</td><td>The duration law is documented in the extracted table. Community feedback says only duration changes with level, not the award; this remains attributed testimony, not a multi-level reward experiment.</td></tr>
+    <tr><td>Scope of the catapult demolition law</td><td>The coefficient-4 model is supported by ordinary-building tests, but recorded rounding discrepancies remain to resolve. Nothing tested extends it to the Ancient Monument or other endgame structures.</td></tr>
+    <tr><td>Fate of the four buildings absent from the target selector</td><td>They cannot be chosen in the inspected selector. Community replies suggest random targeting for some and a possible last-building rule for Stonemason; the wording and conditions still need clarification. Rams target the Watch Tower separately.</td></tr>
     <tr><td>Refund when cancelling an ordinary upgrade</td><td>The 80 % figure is documented for a Grand Work being funded. Whether a queued ordinary upgrade refunds anything, and at what rate, was not measured.</td></tr>
     <tr><td>Building caps in a capital that is not a City</td><td>The 22 cap follows City status. Whether a capital ever reaches 22 on those six buildings without being a City is not documented.</td></tr>
   </tbody>
 </table></div>
 
 <footer>
+  Community updates in this revision refer to replies by Lisan al-Gaib of Throne,
+  DrBloodborne and Qira on 17–18 September 2026. Supervision of the discussion by
+  the developer is not an individual endorsement of every reply.
+  <br>
   <strong>Thronewake Codex</strong> — a knowledge base about the game, independent of any world in progress.
   Server-configured values are flagged as such and the interface of the world you play is always authoritative.
   What is not demonstrated is marked as unknown rather than guessed.
