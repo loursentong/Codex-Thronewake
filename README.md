@@ -24,9 +24,6 @@ Experienced contributors may propose a pull request. Do not edit generated HTML 
 # Thronewake Codex
 
 [![Site](https://img.shields.io/badge/Site-loursentong.github.io-gold?style=flat-square&logo=github)](https://loursentong.github.io/Codex-Thronewake/)
-[![Snapshot](https://img.shields.io/badge/Data%20Snapshot-14%20Sep%202026-blue?style=flat-square)](https://loursentong.github.io/Codex-Thronewake/)
-[![Format](https://img.shields.io/badge/Format-Standalone%20HTML-green?style=flat-square)](https://loursentong.github.io/Codex-Thronewake/)
-[![Tests](https://img.shields.io/badge/Test%20Suite-131%20PASSED-brightgreen?style=flat-square)](https://loursentong.github.io/Codex-Thronewake/)
 
 An interactive encyclopedia and comprehensive knowledge base for **Thronewake**, the persistent browser strategy game.
 
