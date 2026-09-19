@@ -1,0 +1,33 @@
+name: Validate wiki slice
+on:
+  push:
+    paths: ['wiki/**', 'next/**', '.github/workflows/validate-wiki.yml']
+  pull_request:
+    paths: ['wiki/**', 'next/**', '.github/workflows/validate-wiki.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    # Match the reviewed release platform. Pagefind's bundled UI/WASM differs
+    # between the official Windows and Linux packages even at the same version.
+    runs-on: windows-latest
+    timeout-minutes: 10
+    env:
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install checksum-pinned local tools
+        working-directory: wiki
+        run: python -B scripts/bootstrap.py
+      - name: Check public knowledge and negative cases
+        working-directory: wiki
+        run: python -B tests/test_release.py
+      - name: Rebuild HTML and real search
+        working-directory: wiki
+        run: python -B scripts/build.py --out artifacts/ci
+      - name: Reject stale deployment output
+        working-directory: wiki
+        run: python -B scripts/compare_release.py ../next artifacts/ci

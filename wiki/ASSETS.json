@@ -1,0 +1,29 @@
+{
+  "credit": "Thronewake / Wynfir",
+  "distribution_source": "https://github.com/marianhlavac/thronewake-compendium",
+  "archive_sha256": "2b7a5fd46ab7c055d4d0b23940ab9abac403d675101728abf9a074030f605095",
+  "authorization": "Project owner confirmed on 2026-09-19: reuse of game illustrations/icons authorized with credits. No blanket license for upstream code.",
+  "files": {
+    "clay.png": {
+      "sha256": "38ba9d430ff4be4c089350d1273e817d2ad5e1a97ebab19bd5c42bd60b882446"
+    },
+    "crop.png": {
+      "sha256": "18eed17d2fab441b9124d7abd0a96ee7f5e41dad39f17ce4f6c294ad71677334"
+    },
+    "iron.png": {
+      "sha256": "2464e0396158d58faf66d0d14a0b0d4d401bb3f7c957e035218f96301c1a388c"
+    },
+    "raider.png": {
+      "sha256": "aefb22676e0f521e9e921b027f0c3ee7a778096dfb95f50c356bf709645b34f7"
+    },
+    "skullthrower.png": {
+      "sha256": "23d6ffa44721d559e1736fff9326793a2420fd60629e3ba0dae3ad2aaceeed36"
+    },
+    "war_ram.png": {
+      "sha256": "af5b8c2713d57850813db5244014b85d703965ba5043d4b9a90a0dd82a427ff9"
+    },
+    "wood.png": {
+      "sha256": "8b15549588b3c61b18eeee4f79b347f7d7ebe059a20225e84c10cbc836a93943"
+    }
+  }
+}

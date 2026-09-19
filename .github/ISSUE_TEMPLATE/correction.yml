@@ -1,0 +1,28 @@
+name: Correct the reference
+description: Propose a source-backed correction to Codex Thronewake
+title: "Correction: "
+body:
+  - type: markdown
+    attributes:
+      value: "Thanks for helping! Please keep private reports, account details and player coordinates out of this issue. A proposal is reviewed before publication."
+  - type: input
+    id: page
+    attributes:
+      label: Page or entity
+      placeholder: "Raider / unit.raider"
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: What should change?
+      description: State the current claim and your proposed correction.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and context
+      description: Developer post, game version, server speed and relevant conditions.
+    validations:
+      required: true
