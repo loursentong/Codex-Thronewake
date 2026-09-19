@@ -91,8 +91,9 @@ Run `node tests/catalogue.cjs` for the targeted catalogue checks. The earlier
 `browser.cjs` remains the initial nine-page interaction regression suite, not a
 requirement to repeat for every catalogue entry. Tests never submit an issue.
 
-Publish only the checked artifact beneath `/Codex-Thronewake/next/`, leaving the
-existing root wiki intact. Recheck the remote commit before writing. Retain the
+Publish the checked artifact beneath `/Codex-Thronewake/next/`. The main project
+URL redirects there; the previous wiki is preserved unchanged at `/legacy/`.
+Recheck the remote commit before writing. Retain the
 source and artifact hashes together. Rollback is a new revert commit restoring the
 previous artifact, not a force push. A local build is not proof of successful hosting.
 The publishing receipt records what was actually deployed and checked.
