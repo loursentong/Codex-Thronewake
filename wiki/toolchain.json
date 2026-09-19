@@ -1,0 +1,4 @@
+{
+  "hugo": {"version":"0.166.0","windows":{"url":"https://github.com/gohugoio/hugo/releases/download/v0.166.0/hugo_0.166.0_windows-amd64.zip","sha256":"e572364734bd5ead5f8c38d4ac99ea30d3deface89d0a47528aabcdec6800725"},"linux":{"url":"https://github.com/gohugoio/hugo/releases/download/v0.166.0/hugo_0.166.0_linux-amd64.tar.gz","sha256":"45228f5a52eb118b0ca168068f01d7df0447314a24056f1d29667ed9fc368308"}},
+  "pagefind":{"version":"1.5.2","windows":{"url":"https://registry.npmjs.org/@pagefind/windows-x64/-/windows-x64-1.5.2.tgz","sha512":"Fa2Iyw7kaDRzGMfNYNUXNW2zbL5FQVDgSOcbDHdzBrDEdpqOqg8TcZ68F22ol6NJ9IGzvUdmeyZypLW5dyhqsg=="},"linux":{"url":"https://registry.npmjs.org/@pagefind/linux-x64/-/linux-x64-1.5.2.tgz","sha512":"V+tFqHKXhQKq/WqPBD67AFy7scn1/aZID00ws4fSDd+1daSi5UHR9VVlRrOUYKxn3VuFQYRD7lYXdZK1WED1YA=="}}
+}

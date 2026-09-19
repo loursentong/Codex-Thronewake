@@ -1,0 +1,7 @@
+.tools/
+generated/
+public/
+artifacts/
+__pycache__/
+*.pyc
+.hugo_build.lock

@@ -1,0 +1,29 @@
+name: Validate wiki slice
+on:
+  push:
+    paths: ['wiki/**', 'next/**', '.github/workflows/validate-wiki.yml']
+  pull_request:
+    paths: ['wiki/**', 'next/**', '.github/workflows/validate-wiki.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install checksum-pinned local tools
+        working-directory: wiki
+        run: python3 -B scripts/bootstrap.py
+      - name: Check public knowledge and negative cases
+        working-directory: wiki
+        run: python3 -B tests/test_release.py
+      - name: Rebuild HTML and real search
+        working-directory: wiki
+        run: python3 -B scripts/build.py --out artifacts/ci
+      - name: Reject stale deployment output
+        working-directory: wiki
+        run: python3 -B scripts/compare_release.py ../next artifacts/ci

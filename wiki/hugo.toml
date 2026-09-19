@@ -1,0 +1,14 @@
+baseURL = 'https://loursentong.github.io/Codex-Thronewake/next/'
+locale = 'en'
+title = 'Codex Thronewake'
+disableKinds = ['taxonomy', 'term', 'RSS', 'sitemap']
+enableRobotsTXT = false
+contentDir = 'generated/content'
+dataDir = 'generated/data'
+publishDir = 'public'
+disableHugoGeneratorInject = true
+[markup.goldmark.renderer]
+unsafe = false
+[params]
+repository = 'https://github.com/loursentong/Codex-Thronewake'
+release = 'First production slice'

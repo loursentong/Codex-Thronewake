@@ -1,0 +1,1 @@
+<div class="cost-strip">{{ $cost := . }}{{ range hugo.Data.bundle.resources }}<div class="cost-item"><img src="{{ printf "images/%s.png" .key | relURL }}" alt="" width="27" height="27"><strong>{{ index $cost .key | lang.FormatNumber 0 }}</strong><span>{{ .name }}</span></div>{{ end }}</div>

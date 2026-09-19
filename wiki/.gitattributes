@@ -1,0 +1,7 @@
+* text=auto eol=lf
+*.png binary
+*.pagefind binary
+*.pf_meta binary
+*.pf_filter binary
+*.pf_fragment binary
+*.pf_index binary
