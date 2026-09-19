@@ -1,4 +1,4 @@
-name: Validate wiki slice
+name: Validate wiki reference
 on:
   push:
     paths: ['wiki/**', 'next/**', '.github/workflows/validate-wiki.yml']

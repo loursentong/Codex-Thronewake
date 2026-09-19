@@ -1,19 +1,21 @@
 """Fail-closed build: pinned public knowledge -> Hugo -> Pagefind -> checks."""
 import argparse,hashlib,json,os,re,shutil,subprocess,sys,tempfile
+from collections import Counter
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'scripts'))
-from import_tw import canonical
+from import_tw import canonical,EXPECTED_COUNTS,SECTIONS
+from presentation import decorate
 def sha(raw):return hashlib.sha256(raw).hexdigest()
 def checked_bundle():
  raw=(ROOT/'knowledge/bundle.json').read_bytes();manifest=json.loads((ROOT/'knowledge/manifest.json').read_bytes())
  if sha(raw)!=manifest['bundle_sha256']:raise ValueError('Knowledge changed without reviewed import/manifest')
  b=json.loads(raw)
- if b['format']!='tw-wiki-slice-v1' or b['upstream_sha256']!=manifest['upstream_sha256']:raise ValueError('Knowledge contract changed')
- if len(b['entities'])!=9 or len({e['path'] for e in b['entities'].values()})!=9:raise ValueError('Slice scope/path collision')
+ if b['format']!='tw-wiki-reference-v1' or b['upstream_sha256']!=manifest['upstream_sha256']:raise ValueError('Knowledge contract changed')
+ if Counter(e['kind'] for e in b['entities'].values())!=EXPECTED_COUNTS or len({e['path'] for e in b['entities'].values()})!=sum(EXPECTED_COUNTS.values()):raise ValueError('Reference scope/path collision')
  if [r['name'] for r in b['resources']]!=['Lumber','Stone','Metal','Food']:raise ValueError('Official resource labels changed')
  for eid,m in b['entities'].items():
-  if m['id']!=eid or not m['name'] or not re.fullmatch(r'reference/(units|buildings|factions)/[a-z0-9-]+/',m['path']):raise ValueError('Invalid entity identity or path')
+  if m['id']!=eid or not m['name'] or not re.fullmatch(r'reference/'+SECTIONS[m['kind']]+r'/(?:[a-z0-9-]+/)+',m['path']):raise ValueError('Invalid entity identity or path')
   if b['names'][eid]!=m['name']:raise ValueError('Conflicting display name')
   if not m['detail']['evidence']:raise ValueError('Missing source')
   for r in m['detail'].get('requirements',m['detail'].get('unlock_requirements',[])):
@@ -48,14 +50,20 @@ def prepare():
   elif m['kind']=='building':
    lvl=next(r for r in m['catalogue']['levels'] if r['level']==1);m['cost']=lvl['cost'];m['level_one']=lvl
    caps=m['detail']['level_caps'];m['summary']=[{'label':'Village level cap','value':caps.get('nonCityVillage',caps.get('all','Not specified'))},{'label':'City level cap','value':caps.get('city',caps.get('all','Not specified'))},{'label':'Catalogue levels','value':m['catalogue']['catalogue_max_level']}]
-  else:m['summary']=[{'label':'Catalogue roster','value':len(m['detail']['unit_ids'])},{'label':'Unit pages in this slice','value':3}]
+  elif m['kind']=='faction':m['summary']=[{'label':'Catalogue roster','value':len(m['detail']['unit_ids'])},{'label':'Playable faction','value':'Yes' if m['detail']['playable'] else 'No'}]
+  elif m['kind']=='field':
+   lvl=next(r for r in m['catalogue']['levels'] if r['level']==1);m['cost']=lvl['cost'];m['level_one']=lvl
+   m['summary']=[{'label':'Level 1 base production / hour','value':lvl['production_per_hour']},{'label':'Catalogue maximum level','value':m['catalogue']['catalogue_max_level']},{'label':'Level rows','value':len(m['catalogue']['levels'])}]
+  elif m['kind']=='research':m['summary']=[{'label':'Research tier','value':{'minor':'Minor','major':'Major','keystone':'Keystone'}[m['catalogue']['tier_id']]},{'label':'Catalogue ranks','value':m['catalogue']['ranks']},{'label':'Rank descriptions','value':len(m['effects'])}]
+  else:m['summary']=[{'label':'Selected rules','value':len(m['rules'])},{'label':'Evidence classes','value':len({r['authority'] for r in m['rules']})}]
+  m=decorate(m,b)
   rendered[eid]=m
   target=content/m['path'].rstrip('/');target.parent.mkdir(parents=True,exist_ok=True)
-  target.with_suffix('.md').write_text(json.dumps({'title':m['name'],'entity':eid,'layout':'single','kind_label':m['kind'].capitalize(),'description':m['description']})+'\n',encoding='utf-8',newline='\n')
+  target.with_suffix('.md').write_text(json.dumps({'title':m['name'],'entity':eid,'layout':'single','kind_label':m['kind_label'],'description':m['description']})+'\n',encoding='utf-8',newline='\n')
  for path in (ROOT/'content').rglob('*.md'):
   target=content/path.relative_to(ROOT/'content');target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(path,target)
- for rel,title in [('reference','Reference'),('reference/units','Units'),('reference/buildings','Buildings'),('reference/factions','Factions')]:
-  target=content/rel/'_index.md';target.parent.mkdir(parents=True,exist_ok=True);target.write_text(json.dumps({'title':title})+'\n',encoding='utf-8',newline='\n')
+ for rel,title,kind in [('reference','Reference',''),('reference/units','Units','unit'),('reference/buildings','Buildings','building'),('reference/factions','Factions','faction'),('reference/fields','Resource fields','field'),('reference/research','Research','research'),('reference/mechanics','Mechanics','rules')]:
+  target=content/rel/'_index.md';target.parent.mkdir(parents=True,exist_ok=True);target.write_text(json.dumps({'title':title,'collection':kind})+'\n',encoding='utf-8',newline='\n')
  (g/'data/bundle.json').write_text(canonical(b),encoding='utf-8',newline='\n');(g/'data/entities.json').write_text(canonical(rendered),encoding='utf-8',newline='\n')
  return b,manifest,rendered
 def build(base_url,destination):
@@ -71,7 +79,7 @@ def build(base_url,destination):
  if destination.exists():raise ValueError('Use a new destination; do not overwrite a last-known-good build')
  subprocess.run([str(binaries['hugo']),'--source',str(ROOT),'--destination',str(destination),'--baseURL',base_url,'--noBuildLock','--panicOnWarning'],check=True)
  for eid,m in models.items():
-  target=destination/'data'/(eid+'.json');target.parent.mkdir(exist_ok=True);target.write_text(canonical(m),encoding='utf-8',newline='\n')
+  target=destination/'data'/(eid+'.json');target.parent.mkdir(exist_ok=True);target.write_text(canonical({k:v for k,v in m.items() if k!='evidence'}),encoding='utf-8',newline='\n')
  subprocess.run([str(binaries['pagefind']),'--site',str(destination),'--output-subdir','pagefind'],check=True)
  if not (destination/'pagefind/pagefind.js').is_file() or not list((destination/'pagefind').glob('*.pf_meta')):raise ValueError('Search index missing')
  (destination/'.nojekyll').write_bytes(b'')

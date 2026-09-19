@@ -1,0 +1,7 @@
+<div class="context-note" id="{{ .id }}">
+<span class="tiny-tag">{{ .authority_label }}</span><h3>{{ .title }}</h3>
+{{ if .statement }}<p>{{ .statement }}</p>{{ end }}
+{{ if ne .value nil }}<p class="rule-value"><strong>{{ .value }}</strong> {{ .unit }}</p>{{ end }}
+<p>{{ .conditions }}</p>{{ with .limits }}<p class="small"><strong>Limits:</strong> {{ . }}</p>{{ end }}
+{{ if .related_entities }}<div class="related">{{ range .related_entities }}{{ with index hugo.Data.entities . }}<a href="{{ .path | relURL }}">{{ .name }} ↗</a>{{ end }}{{ end }}</div>{{ end }}
+</div>

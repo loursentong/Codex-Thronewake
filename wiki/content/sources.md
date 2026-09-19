@@ -2,9 +2,11 @@
 
 ## What this release covers
 
-This first slice covers three Stormfang Clans units, their faction and five
-prerequisite buildings. It is not the complete wiki. The existing wiki remains
-available separately while the new reference grows.
+This release covers 40 units, 39 buildings, four factions, four resource fields,
+63 research entries and 11 mechanics topics from the reviewed public export.
+This completes that catalogue, not every possible gameplay question. Unresolved
+claims remain excluded; strategy guides and community handoff are separate work.
+The existing wiki remains available separately while this reference grows.
 
 ## Evidence is attached to facts
 
@@ -21,6 +23,13 @@ The source-linked JSON on each page is intended for traceability and future reus
 It is not an authenticated game API and includes no live account state.
 
 ## Credits
+
+The home page's no-pay-to-win statement is attributed to the
+[official game website](https://www.thronewake.com/), checked on 19 September 2026.
+The development introduction is attributed to the
+[Compendium overview](https://thronewake-compendium.pages.dev/overview), using
+`content/Overview.md` in the supplied archive identified by `ASSETS.json`.
+These are presentation sources, not new measurements of game mechanics.
 
 Thronewake and game artwork: **Wynfir / Thronewake**. The supplied icon files came
 through the [Thronewake Compendium](https://github.com/marianhlavac/thronewake-compendium).

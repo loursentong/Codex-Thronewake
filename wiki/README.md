@@ -1,8 +1,8 @@
-# Codex Thronewake — first production slice
+# Codex Thronewake — public reference catalogue
 
-Dark-first Hugo reference with Pagefind search. Nine connected entities: Raider,
-War Ram, Skullthrower, Stormfang Clans, Workshop, Academy, Town Hall, Barracks and
-Rally Point. This is not the full wiki or completed community handoff.
+Dark-first Hugo reference with Pagefind search: 40 units, 39 buildings, four factions,
+four resource fields, 63 research entries and 11 mechanics topics. This covers the
+reviewed public catalogue, not all gameplay questions or completed community handoff.
 
 ## Build in a clean checkout
 
@@ -87,7 +87,9 @@ and formal community ownership transfer remain future work; acceptance is not de
 
 Browser checks require Node, Playwright and Microsoft Edge. Set `PLAYWRIGHT_MODULE`
 when using a nonstandard install; `TW_BASE` can test another served artifact.
-Run `node tests/browser.cjs` against the loopback server. Tests never submit an issue.
+Run `node tests/catalogue.cjs` for the targeted catalogue checks. The earlier
+`browser.cjs` remains the initial nine-page interaction regression suite, not a
+requirement to repeat for every catalogue entry. Tests never submit an issue.
 
 Publish only the checked artifact beneath `/Codex-Thronewake/next/`, leaving the
 existing root wiki intact. Recheck the remote commit before writing. Retain the
@@ -103,6 +105,6 @@ provenance: `ASSETS.json`. No upstream source code was copied into these new tem
 Sources: [Hugo](https://gohugo.io/installation/windows/),
 [Pagefind](https://pagefind.app/docs/ui-usage/).
 
-This README describes this implemented slice; it does not certify the entire future
-P5/P6 wiki, moderation system or in-game integration. All nine entities remain bounded
+This README describes this implemented catalogue; it does not certify the entire future
+P5/P6 wiki, moderation system or in-game integration. All entries remain bounded
 by their snapshot/version context and separately qualified later rules.

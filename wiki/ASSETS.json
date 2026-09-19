@@ -4,26 +4,137 @@
   "archive_sha256": "2b7a5fd46ab7c055d4d0b23940ab9abac403d675101728abf9a074030f605095",
   "authorization": "Project owner confirmed on 2026-09-19: reuse of game illustrations/icons authorized with credits. No blanket license for upstream code.",
   "files": {
+    "axeborn.png": {
+      "sha256": "768535381923214a0f69c3ea137f8d6ce86d7426ec97d207bfab664f7d13ba72"
+    },
+    "blood_charger.png": {
+      "sha256": "a189600450a5f3cb59e1559a8f264c28b164f7cb5e28d3e61184e04fb7bc684f"
+    },
+    "briar_guard.png": {
+      "sha256": "41ec7b3aa438b54982155affa119df9353d38229aa0381f5833b79a7f8854598"
+    },
+    "carved_warrior.png": {
+      "sha256": "ac237c94c36df1489cfe65e1da013e20c874dc59ea909f4b9014eb45dd0e5c4f"
+    },
+    "circle_elder.png": {
+      "sha256": "d4931bca1128e23da051444df5d4f73e6f0de1023a02204ad55f72c11cd1a2f4"
+    },
+    "clan_warlord.png": {
+      "sha256": "2395353459748ac9f6ddcecaee4a8277fed31ed9596a4407d970708131fc5c73"
+    },
     "clay.png": {
       "sha256": "38ba9d430ff4be4c089350d1273e817d2ad5e1a97ebab19bd5c42bd60b882446"
+    },
+    "crimson_lancer.png": {
+      "sha256": "766816b5e56f582871971bc8339cec8a56cc76ae92c3eda5cd3c42a24904b180"
     },
     "crop.png": {
       "sha256": "18eed17d2fab441b9124d7abd0a96ee7f5e41dad39f17ce4f6c294ad71677334"
     },
+    "dominion_catapult.png": {
+      "sha256": "486ad66b9cc5338813a6d497987e71de4453be34f2916cd3c15e906ed6e0586a"
+    },
+    "emberblade.png": {
+      "sha256": "781420bf1e4685be944663c6d1d62878a1cef5cd64a6b38737b8be7a9a7683ac"
+    },
+    "fang_rider.png": {
+      "sha256": "bb99f2d2a264207b0859578b3642ce71e4e823c363167c64b41f0828edab962d"
+    },
+    "gatebreaker.png": {
+      "sha256": "0ca3c02f0b5e20e44fdda412da116c338d8c7b2a3e24c3b1a40c35d55fd65a15"
+    },
+    "green_lancer.png": {
+      "sha256": "d5bd5a2d0c95228bbae4666e3429dba73d7295e43a33bd9e70a052134b0cdab7"
+    },
+    "high_prefect.png": {
+      "sha256": "b3086e16204f16fed239fa3a327e95b4c5a806121ebc9bd4e36bb5b2eb8480b1"
+    },
     "iron.png": {
       "sha256": "2464e0396158d58faf66d0d14a0b0d4d401bb3f7c957e035218f96301c1a388c"
+    },
+    "iron_ram.png": {
+      "sha256": "ad6bc6bfb54ee3484ea682d842ec625a48a968f61486dd5c14fc5df868374a3e"
+    },
+    "iron_spear.png": {
+      "sha256": "d5c340c4b7e88ba0ae0251b44775dc4a0c047a7f5aaf5adf5719e145bae1ddcf"
+    },
+    "monolith_warden.png": {
+      "sha256": "9493f46b89171a7784c97cad2b1dc669ba38a6ca15e4982d98ba9f9bc7c630a0"
+    },
+    "oak_cavalier.png": {
+      "sha256": "0944fc5cf10d6531a632f670b40c94c452caf5ef4f11136f7d9ce5d8696562c3"
+    },
+    "obelisk_engine.png": {
+      "sha256": "d3506cf47ffe99ad11d455512f2a138b98f35369443f2965a0f1379fc00fd431"
+    },
+    "obsidian_knight.png": {
+      "sha256": "1de10e2868c509a227c10752c21b220065a2a7bf3fc94a9c6ade3b02c269983d"
+    },
+    "pathstalker.png": {
+      "sha256": "03cea44674154b58c0e79cffbd559936650ee5271af9fc4a2ae73eeb03c80b21"
     },
     "raider.png": {
       "sha256": "aefb22676e0f521e9e921b027f0c3ee7a778096dfb95f50c356bf709645b34f7"
     },
+    "sentinel.png": {
+      "sha256": "bc492b257549bcb940f997defd24d2bf1ebad614516768fa4e9b7a741e4f9b83"
+    },
+    "settler1.png": {
+      "sha256": "deb4d50dc9a8265101953fec69a3d62f1eadfd23feac39311a18fcb2ab60bd57"
+    },
+    "settler2.png": {
+      "sha256": "7bbc1524c74049a932117f447a090da253ab38d45a8d70b18b180d6d985c04fe"
+    },
+    "settler3.png": {
+      "sha256": "c7c3c7d255bc958c3cae3303071cf42608f46464a3104e01e234ea4b3d52ba99"
+    },
+    "settler4.png": {
+      "sha256": "e84c651d1d2fe48e79ea4fc60923a9ffdf29fd184ba6fd7ee06cf46e44818d63"
+    },
+    "shardwing.png": {
+      "sha256": "2a549a6fbd960987eff2ff2ab61af6331ff61e83902ef90c76e56985711d739a"
+    },
+    "shieldbearer.png": {
+      "sha256": "a28f68586ce3e831c19a7d05c511b996060a6892e6a500303f98aca0885ba4ea"
+    },
     "skullthrower.png": {
       "sha256": "23d6ffa44721d559e1736fff9326793a2420fd60629e3ba0dae3ad2aaceeed36"
+    },
+    "slate_rider.png": {
+      "sha256": "75bef096bda7ad929b3ff2f4c3d264dd829924e046b7c3a30dadb26275d188c9"
+    },
+    "stag_rider.png": {
+      "sha256": "5f8684e5f3d8e5721b6d70676df847fde8416ee0af09748a015f969461680707"
+    },
+    "stonecaster.png": {
+      "sha256": "027403d41f5f5967ee30ad6e6a2e7f1d65d100a01a8315f665a067b9505160b1"
+    },
+    "stonepike.png": {
+      "sha256": "437b0899a73ea8871d3ef349e1263186ed4877be40d496345e717285f2413635"
+    },
+    "sun_rider.png": {
+      "sha256": "c8385fbcf2d61a19b3fe22a34c9efd2da5c02143ed71f90649822f938298f0ba"
+    },
+    "the_ascendant.png": {
+      "sha256": "d525e0bdede1256347539599597b5b799ea56365ecb7473519a7471d39547d29"
+    },
+    "timber_ram.png": {
+      "sha256": "402f3d877a367a3b8f1d60a8fbf41782aad638f660fc1b8cdfeb0f8f777d2439"
+    },
+    "war_brute.png": {
+      "sha256": "79708699c2bb440ec062560e2eae967766f7225fcc2c49d468f779422d241d07"
     },
     "war_ram.png": {
       "sha256": "af5b8c2713d57850813db5244014b85d703965ba5043d4b9a90a0dd82a427ff9"
     },
+    "wind_scout.png": {
+      "sha256": "bd5c33f997be883fe157bd4378fe6319d086997f0b8045888b16ddbafca1a56b"
+    },
     "wood.png": {
       "sha256": "8b15549588b3c61b18eeee4f79b347f7d7ebe059a20225e84c10cbc836a93943"
+    },
+    "woodblade.png": {
+      "sha256": "bb0e2d3ccf1a6b091c9e78fbc9e68c90c54db58cf71a59e174442a963c848984"
     }
   }
 }

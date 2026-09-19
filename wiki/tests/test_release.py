@@ -7,13 +7,34 @@ import build,check,import_tw,compare_release
 class Release(unittest.TestCase):
  @classmethod
  def setUpClass(cls):cls.bundle,cls.manifest=build.checked_bundle()
- def test_scope(self):self.assertEqual(len(self.bundle['entities']),9)
+ def test_scope(self):self.assertEqual(len(self.bundle['entities']),161)
+ def test_palace_exclusions_not_prerequisite_levels(self):
+  r=self.bundle['entities']['building.palace']['detail']['requirements']
+  exclusions=[x for x in r if x['kind'].startswith('forbidden')]
+  self.assertEqual(len(exclusions),2);self.assertTrue(all(x['level'] is None for x in exclusions))
+ def test_field_capital_access(self):
+  row=self.bundle['entities']['field.clay']['catalogue']['levels'][-1]
+  self.assertEqual(row['level'],22);self.assertEqual(row['production_per_hour'],6563)
+  self.assertEqual(row['access_by_settlement'],dict(capital=True,city=False,village=False))
+ def test_merchant_faction_values(self):
+  values=self.bundle['entities']['building.marketplace']['detail']['static_effects']['merchantCarryCapacity']
+  self.assertEqual(values,dict(embermark_dominion=500,stormfang_clans=1000,verdant_wardens=750))
+ def test_research_ranks_complete(self):
+  for m in self.bundle['entities'].values():
+   if m['kind']=='research':self.assertEqual(sorted(r['rank'] for r in m['effects']),list(range(1,m['catalogue']['ranks']+1)))
+ def test_effect_labels_cover_sources(self):
+  from presentation import EFFECTS
+  for m in self.bundle['entities'].values():
+   if m['kind']=='building':
+    for row in m['effects']:self.assertIn(row['effect_id'],EFFECTS)
+ def test_reviewed_exclusions_retained(self):self.assertEqual(len(self.bundle['excluded_blocks']),29)
  def test_names(self):self.assertEqual(self.bundle['names']['building.main'],'Town Hall');self.assertEqual(self.bundle['names']['unit.raider'],'Raider')
  def test_resource_names(self):self.assertEqual([r['name'] for r in self.bundle['resources']],['Lumber','Stone','Metal','Food'])
  def test_raider_cost(self):
   fact=next(r for r in self.bundle['entities']['unit.raider']['facts'] if r['predicate']=='training_cost');self.assertEqual(fact['value'],dict(wood=95,clay=75,iron=40,crop=40))
  def test_no_inferred_training_building(self):
-  for key in import_tw.UNIT_KEYS:self.assertIsNone(self.bundle['entities']['unit.'+key]['detail']['training_building'])
+  for m in self.bundle['entities'].values():
+   if m['kind']=='unit':self.assertIsNone(m['detail']['training_building'])
  def test_siege_qualification(self):self.assertIn('rule.J17_C_PATCH_RAM',[r['id'] for r in self.bundle['entities']['unit.war_ram']['rules']])
  def test_workshop_prerequisite(self):
   reqs=self.bundle['entities']['building.workshop']['detail']['requirements'];self.assertIn({'entity_id':'building.academy','kind':'required','level':10,'presence_flag':None},reqs)

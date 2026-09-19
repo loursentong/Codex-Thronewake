@@ -1,0 +1,34 @@
+// Focused checks for newly introduced page families. Never submits a proposal.
+const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
+const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
+const base=process.env.TW_BASE||'http://127.0.0.1:8769/Codex-Thronewake/next/';
+const out=path.join(__dirname,'../artifacts/qa-catalogue');fs.mkdirSync(out,{recursive:true});
+(async()=>{
+ const browser=await chromium.launch({channel:'msedge',headless:true});
+ const page=await browser.newPage({viewport:{width:390,height:900}});const checks=[],errors=[];
+ page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400)errors.push(r.url());});
+ await page.goto(base+'reference/buildings/palace/');
+ assert((await page.locator('#requirements').innerText()).includes('Must not be present here'));
+ assert((await page.locator('#requirements').innerText()).includes('Must not be present in another village'));
+ checks.push('Palace exclusions rendered as exclusions');
+ await page.goto(base+'reference/fields/clay/#field.clay.level.22');
+ assert(await page.locator('#level-table').evaluate(e=>e.open));
+ const cells=await page.locator('[id="field.clay.level.22"] td').allTextContents();assert.deepEqual(cells.slice(-3),['No','No','Yes']);
+ assert.equal(await page.locator('#level-table tbody tr').count(),23);
+ assert(!await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth));
+ checks.push('23 field levels, capital restriction, deep link and mobile table');
+ await page.goto(base+'reference/research/economic/construction-guild/organized-labor/');
+ assert.equal(await page.locator('h1').textContent(),'Organized Labor');assert.equal(await page.locator('.rank-card').count(),3);
+ assert((await page.locator('#rank-effects').innerText()).includes('not the sum'));
+ assert(!await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth));
+ await page.screenshot({path:path.join(out,'research-mobile.png'),fullPage:true});checks.push('Research ranks, qualification and mobile layout');
+ await page.goto(base+'reference/buildings/marketplace/');assert((await page.locator('article').innerText()).includes('Base merchant carrying capacity'));
+ await page.locator('#building-effects > summary').click();await page.locator('.effect-series > summary').first().click();
+ assert(await page.locator('.effect-series[open] tbody tr').count()>1);checks.push('Faction parameters and expandable building effects');
+ await page.goto(base+'reference/mechanics/research/');assert(await page.locator('.context-note').count()>0);checks.push('Mechanics page renders qualified rules');
+ await page.goto(base+'search/');await page.locator('.pagefind-ui__search-input').fill('Organized Labor');
+ await page.locator('.pagefind-ui__result-link').filter({hasText:'Organized Labor'}).first().waitFor();checks.push('New research entry discoverable in real search');
+ assert.deepEqual(errors,[]);await browser.close();
+ const receipt={success:true,checks,errors,scope:'Targeted new templates only; no repeated exhaustive review'};
+ fs.writeFileSync(path.join(out,'browser.json'),JSON.stringify(receipt,null,2));console.log(JSON.stringify(receipt));
+})().catch(e=>{console.error(e);process.exit(1)});

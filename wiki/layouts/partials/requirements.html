@@ -1,1 +1,9 @@
-{{ if . }}<ul class="requirement-list">{{ range . }}{{ $target := index hugo.Data.entities .entity_id }}<li><a href="{{ $target.path | relURL }}">{{ $target.name }}</a><span>Level {{ .level }}</span></li>{{ end }}</ul>{{ else }}<p class="small muted">No prerequisite is listed in this catalogue record. This does not establish that every gameplay context is unrestricted.</p>{{ end }}
+{{ if . }}<ul class="requirement-list">
+{{ range . }}{{ $target := index hugo.Data.entities .entity_id }}
+<li><a href="{{ $target.path | relURL }}">{{ $target.name }}</a><span>
+{{ if eq .kind "forbidden_if_present" }}Must not be present here
+{{ else if eq .kind "forbidden_if_present_in_another_village" }}Must not be present in another village
+{{ else if eq .kind "required_for_multiple" }}Level {{ .level }} — for additional copies
+{{ else }}Level {{ .level }}{{ end }}
+</span></li>
+{{ end }}</ul>{{ else }}<p class="small muted">No prerequisite is listed in this catalogue record. This does not establish that every gameplay context is unrestricted.</p>{{ end }}

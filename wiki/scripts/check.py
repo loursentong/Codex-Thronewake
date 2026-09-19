@@ -38,7 +38,7 @@ def check(root):
   text=p.read_text(encoding='utf-8')
   for value in ('C:/Users/','C:\\Users\\','Latong','02_STRATEGIE_COMPTE','04_BASE_SERVEUR','@gmail.com'):
    if value in text:raise ValueError('Private material: '+str(p))
- if len(list((root/'data').glob('*.json')))!=9:raise ValueError('Entity count mismatch')
+ if len(list((root/'data').glob('*.json')))!=release['entities']:raise ValueError('Entity count mismatch')
  return {'html_pages':len(docs),'local_links_checked':links,'files':len(files),'valid':True}
 if __name__=='__main__':
  ap=argparse.ArgumentParser();ap.add_argument('root',type=Path);a=ap.parse_args();print(json.dumps(check(a.root)))

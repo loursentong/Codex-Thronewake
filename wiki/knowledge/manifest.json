@@ -1,6 +1,14 @@
 {
-  "format": "tw-wiki-slice-v1",
+  "format": "tw-wiki-reference-v1",
   "upstream_sha256": "bb0daf523980482bc681e7c5fc98d3cc160f4a6abab67283ae3d5aa4e35fe87a",
-  "bundle_sha256": "993d780154b3c0915cfde7273de68bf656768fadd8e0b169ac25cc1ce4b272ea",
-  "entities": 9
+  "bundle_sha256": "2ac3871074be2ab24a7a1c512efd79c6e3bc880deb4e9cb49ac09a70f3e2b4df",
+  "entities": 161,
+  "counts": {
+    "unit": 40,
+    "building": 39,
+    "faction": 4,
+    "field": 4,
+    "research": 63,
+    "rules": 11
+  }
 }
