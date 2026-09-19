@@ -33,18 +33,18 @@ The Codex is designed as a standalone web application contained in a single HTML
 
 ## Features
 
-* **Certified Accuracy**: Every statistic, cost, and research time is extracted directly from the official client snapshot dated September 14, 2026.
+* **Verified Game Data**: All statistics, costs, production rates, and research times are extracted directly from the September 14, 2026 client snapshot.
 * **Enhanced Search Engine**:
-  * `/` key to focus the search bar.
-  * `Esc` key to dismiss search.
-  * `↑` button to jump back to the top.
-  * Search across buildings, units, technologies, artefacts, and mechanics simultaneously.
-* **Explorers & Calculators**:
-  * Automated calculation of costs, production times, and resource rates.
-  * Comparative filters by faction (*Embermark*, *Verdant*, *Stormfang*, *Ancients*).
-* **Polished Interface (V15)**:
-  * Responsive layout (Desktop, Tablet, Mobile) with a dedicated print stylesheet.
-  * Sticky headers, readable tables, and color-coded costs.
+  * Press `/` to focus search instantly from anywhere on the page.
+  * Press `Esc` to close search.
+  * Click the `↑` button to return to the top.
+  * Search simultaneously across pages, buildings, resource fields, units, technologies, and factions.
+* **Interactive Explorers & Calculators**:
+  * Interactive data tables for resource costs, production curves, and training times.
+  * Filters for the 3 playable tribes (*Embermark*, *Verdant*, *Stormfang*) and the *Ancients*.
+* **Polished Interface (V15 Pass)**:
+  * Fully responsive design (Desktop, Tablet, Mobile) with an optimized print stylesheet.
+  * Sticky table headers, color-coded resource costs, accessible contrast, and distinct color accents per section.
 
 ---
 
