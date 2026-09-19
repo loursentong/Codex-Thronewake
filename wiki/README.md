@@ -21,6 +21,12 @@ from official release/registry URLs and checked against pinned SHA-256/SHA-512 v
 Hugo 0.166.0 and Pagefind 1.5.2 are pinned in `toolchain.json`. No dependency install
 script is executed. A build requires a **new** artifact directory and stops on errors.
 
+The reference release and its comparison CI use Windows x64. Linux also builds
+successfully with the pinned tools and passes the data tests, but the official
+Pagefind platform packages embed different UI/WASM bytes and can serialize the
+index differently. Cross-platform byte identity is not promised. Do not replace
+the checked public artifact with a Linux build without its own browser review.
+
 The Pagefind Default UI is explicitly supported by 1.5.2 and used here with dark
 tokens and tested filters. Its newer Component UI remains an optional later change,
 not a prerequisite or a second search engine.
