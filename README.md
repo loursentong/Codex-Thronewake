@@ -1,3 +1,5 @@
+This is a work in progress, still unfinished.
+
 # Contributing (Help Keep the Codex Accurate)
 
 ## Found Something Wrong?
